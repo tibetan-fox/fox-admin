@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${database-service:localhost}:3306/${database-name:foxdb}?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    username: ${database-user:foxuser}
+    password: ${database-password:Foxpwd123}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
