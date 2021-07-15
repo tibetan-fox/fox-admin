@@ -23,7 +23,7 @@ import java.util.List;
  * @author ruoyi
  */
 @Service
-public class ConfigService
+public class SystemConfigService
 {
     @Autowired
     private SysConfigMapper configMapper;

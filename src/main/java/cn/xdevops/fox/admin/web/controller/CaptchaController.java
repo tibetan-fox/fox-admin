@@ -1,6 +1,6 @@
 package cn.xdevops.fox.admin.web.controller;
 
-import cn.xdevops.fox.admin.application.service.ConfigService;
+import cn.xdevops.fox.admin.application.service.SystemConfigService;
 import cn.xdevops.fox.admin.domain.captcha.CaptchaConstants;
 import cn.xdevops.fox.admin.common.utils.sign.Base64;
 import cn.xdevops.fox.admin.common.utils.uuid.IdUtils;
@@ -33,7 +33,7 @@ public class CaptchaController {
     private RedisCache redisCache;
 
     @Autowired
-    private ConfigService configService;
+    private SystemConfigService systemConfigService;
 
     // 验证码类型
     @Value("${fox.captchaType}")
@@ -44,7 +44,7 @@ public class CaptchaController {
     public AjaxResult getCode(HttpServletResponse response) throws IOException
     {
         AjaxResult ajax = AjaxResult.success();
-        boolean captchaOnOff = configService.selectCaptchaOnOff();
+        boolean captchaOnOff = systemConfigService.selectCaptchaOnOff();
         ajax.put("captchaOnOff", captchaOnOff);
         if (!captchaOnOff)
         {

@@ -36,5 +36,8 @@ public final class Constants {
      */
     public static final String RESOURCE_PREFIX = "/profile";
 
+    /** 是否为（是） */
+    public static final String YES = "Y";
+
 
 }

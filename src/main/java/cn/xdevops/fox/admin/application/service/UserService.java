@@ -42,7 +42,7 @@ public class UserService
     private SysUserPostMapper userPostMapper;
 
     @Autowired
-    private ConfigService configService;
+    private SystemConfigService systemConfigService;
 
     /**
      * 根据条件分页查询用户列表
@@ -448,7 +448,7 @@ public class UserService
         int failureNum = 0;
         StringBuilder successMsg = new StringBuilder();
         StringBuilder failureMsg = new StringBuilder();
-        String password = configService.selectConfigByKey("sys.user.initPassword");
+        String password = systemConfigService.selectConfigByKey("sys.user.initPassword");
         for (SysUser user : userList)
         {
             try

@@ -43,6 +43,6 @@ public class BaseEntity implements Serializable
     private String remark;
 
     /** 请求参数 */
-    private Map<String, Object> params;
+    private Map<String, Object> params = new HashMap<>();
 
 }

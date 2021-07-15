@@ -103,7 +103,7 @@ public class RoleService
      */
     public List<SysRole> selectRoleAll()
     {
-        return SpringUtils.getAopProxy(this).selectRoleList(new SysRole());
+        return this.selectRoleList(new SysRole());
     }
 
     /**

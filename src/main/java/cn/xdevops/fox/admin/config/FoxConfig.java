@@ -31,4 +31,12 @@ public class FoxConfig {
         FoxConfig.profile = profile;
     }
 
+    /**
+     * 获取下载路径
+     */
+    public static String getDownloadPath()
+    {
+        return getProfile() + "/download/";
+    }
+
 }

@@ -37,7 +37,7 @@ public class LoginService {
     private UserService userService;
 
     @Autowired
-    private ConfigService configService;
+    private SystemConfigService systemConfigService;
 
     @Autowired
     private TokenService tokenService;
@@ -55,7 +55,7 @@ public class LoginService {
      */
     public String login(String username, String password, String code, String uuid)
     {
-        boolean captchaOnOff = configService.selectCaptchaOnOff();
+        boolean captchaOnOff = systemConfigService.selectCaptchaOnOff();
         // 验证码开关
         if (captchaOnOff)
         {
